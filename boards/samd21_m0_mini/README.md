@@ -21,4 +21,4 @@ for examples.
     the VID/PID when flashing: `cargo hf2 --vid 0x03eb --pid 0x2402 --release
     --example blink`
 
-Note: This board is factory flashed with an Arduino Zero bootloader (not UF2 compatible), if you haven't installed an UF2 bootloader yourself, you can use bossace tool from Adafruit arduino support package as described in [project readme](https://github.com/atsamd-rs/atsamd#getting-code-onto-the-device-adafruit-m0m4-board-such-as-gemma-m0--feather-m0)
+Note: This board is factory flashed with an Arduino Zero bootloader (not UF2 compatible), if you haven't installed a UF2 bootloader yourself, you can use bossac tool from Adafruit arduino support package as described in [project readme](https://github.com/atsamd-rs/atsamd#getting-code-onto-the-device-adafruit-m0m4-board-such-as-gemma-m0--feather-m0)
