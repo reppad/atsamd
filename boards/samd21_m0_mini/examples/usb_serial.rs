@@ -9,7 +9,7 @@ extern crate samd21_m0_mini as hal;
 
 use hal::clock::GenericClockController;
 use hal::entry;
-use hal::gpio::{OpenDrain, Output, Pa18};
+use hal::gpio::{OpenDrain, Output, Pa27};
 use hal::pac::{interrupt, CorePeripherals, Peripherals};
 
 use hal::usb::UsbBus;
@@ -74,7 +74,7 @@ fn main() -> ! {
 static mut USB_ALLOCATOR: Option<UsbBusAllocator<UsbBus>> = None;
 static mut USB_BUS: Option<UsbDevice<UsbBus>> = None;
 static mut USB_SERIAL: Option<SerialPort<UsbBus>> = None;
-static mut LED: Option<Pa18<Output<OpenDrain>>> = None;
+static mut LED: Option<Pa27<Output<OpenDrain>>> = None;
 
 fn poll_usb() {
     unsafe {

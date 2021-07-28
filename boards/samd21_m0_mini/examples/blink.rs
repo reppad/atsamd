@@ -22,14 +22,18 @@ fn main() -> ! {
         &mut peripherals.NVMCTRL,
     );
     let mut pins = hal::Pins::new(peripherals.PORT);
-    let mut led1 = pins.led_rx.into_open_drain_output(&mut pins.port);
-    let mut led2 = pins.led_tx.into_open_drain_output(&mut pins.port);
+    let mut led0 = pins.d13.into_open_drain_output(&mut pins.port);
+    let mut led1 = pins.led_tx.into_open_drain_output(&mut pins.port);
+    let mut led2 = pins.led_rx.into_open_drain_output(&mut pins.port);
     let mut delay = Delay::new(core.SYST, &mut clocks);
 
     let mut counter = 0u8;
     loop {
         counter = counter.wrapping_add(1);
         delay.delay_ms(100u8);
+        if counter & (1 << 0) != 0 {
+            led0.toggle();
+        }
         if counter & (1 << 1) != 0 {
             led1.toggle();
         }
